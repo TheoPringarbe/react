@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/react/static/css/main.77765709.css",
+    "main.js": "/react/static/js/main.8cce89ce.js",
+    "static/media/igloo.jpg": "/react/static/media/igloo.a4f04d95bb42e18161ac.jpg",
+    "index.html": "/react/index.html",
+    "main.77765709.css.map": "/react/static/css/main.77765709.css.map",
+    "main.8cce89ce.js.map": "/react/static/js/main.8cce89ce.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.77765709.css",
+    "static/js/main.8cce89ce.js"
+  ]
+}
