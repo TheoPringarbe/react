@@ -1,5 +1,8 @@
 import React from "react";
 const Horaire = (props) => {
+    
+// FONCTION STATELESS POUR RECUPERER LES HEURES ETANT GARDER DANS UN TABLEAU
+//en effet les horraires sont sous forme de tableau dans les properties
 
     let contenu = props.horaires.map((horaire, index) => {
         return (

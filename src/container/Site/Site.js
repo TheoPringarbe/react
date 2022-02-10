@@ -5,6 +5,10 @@ import NavBar from '../../component/NavBar/NavBar';
 import Localisation from '../Localisation/Localisation';
 import Contact from '../Contact/Contact';
 import Footer from '../../component/Footer/footer';
+
+
+// CLASS REPERTORIANT TOUTES LES ROUTES DU SITE
+
 class Site extends Component {
   render() {
     return (

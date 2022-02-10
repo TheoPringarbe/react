@@ -22,18 +22,16 @@ class Localisation extends Component {
                     recherche: reponse.data.features
                 })
             })
-
-        // .catch(error => {
-        //     console.log(error)
-        // })
     }
 
     render() {
 
         // PAGINATION
 
-        let ListageDesEtablissement = "";
-        let pagination = [];
+        let ListageDesEtablissement = ""; // variable permettant de parcourir la liste d'une page
+        let pagination = []; //ressencement des pages
+
+        // CONDITION PERMETTANT DE GERER LES DERNIERS ELEMENTS QUI NE REMPLISSENT PAS UNE PAGE
         if (this.state.recherche) {
             let fin = this.state.recherche.length / 10;
             if (this.state.recherche.length % 10 !== 0) fin++;
@@ -44,10 +42,14 @@ class Localisation extends Component {
                         clic={() => this.setState({ numeroPageActuel: index })}>
                         {index}</Bouton>);
 
+                //PARAMETRAGE DE LA LISTE REDUITE
+
                 const debutListe = (this.state.numeroPageActuel - 1) * 10;
                 const finListe = (this.state.numeroPageActuel) * 10;
                 const listeReduite = this.state.recherche.slice(debutListe, finListe);
                 console.log(listeReduite)
+                
+                // PARCOURS DE LA LISTE REDUITE ET RECUPERATION DES DONNEES VOULUES
 
                 ListageDesEtablissement = listeReduite.map(etablissement => {
                     return (
