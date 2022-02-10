@@ -30,7 +30,7 @@ class Localisation extends Component {
 
     render() {
 
-        // INFORMATION
+        // PAGINATION
 
         let ListageDesEtablissement = "";
         let pagination = [];
@@ -70,14 +70,16 @@ class Localisation extends Component {
 
         return (<>
             <Titre>Recherche d'un etablissement</Titre>
+            <div className=" row justify-content-around">
             <Bouton clic={() => this.HandleSelectionEtablissement("mairie")}
-                styleBtn="btn-dark">Mairie</Bouton>
+                styleBtn="btn-light border border-info col-3">Mairie</Bouton>
             <Bouton clic={() => this.HandleSelectionEtablissement("gendarmerie")}
-                styleBtn="btn-dark">Commissariat de Police</Bouton>
+                styleBtn="btn-light border border-info col-3">Commissariat de Police</Bouton>
             <Bouton clic={() => this.HandleSelectionEtablissement("pole_emploi")}
-                styleBtn="btn-dark">Pole emploi</Bouton>
+                styleBtn="btn-light border border-info col-3">Pole emploi</Bouton>
             <Bouton clic={() => this.HandleSelectionEtablissement("prefecture")}
-                styleBtn="btn-dark">Prefecture</Bouton>
+                styleBtn="btn-light border border-info col-3">Prefecture</Bouton>
+                </div>
                 <div className='row no-gutters'>{ListageDesEtablissement}</div>
                 <div>{pagination}</div>
 

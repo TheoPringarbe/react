@@ -3,13 +3,13 @@ import {withFormik} from "formik"
 import * as Yup from 'yup'
 
 
-
+//CONCEPTION FORMULAIRE
 const Formulaire = (props) => {
         return (
             <>
                 <form>
   <div class="mb-3" id='mail'>
-    <label for="titre" className="form-label">Adresse Mail</label>
+    <h5><label for="titre" className="form-label">Adresse Mail</label></h5>
     <input 
     type="email" 
     className="form-control"
@@ -23,7 +23,7 @@ const Formulaire = (props) => {
     }
   </div>
   <div className="form-group" id='message'>
-      <label for="exampleTextarea" className="form-label mt-4">Message</label>
+      <h5><label for="exampleTextarea" className="form-label mt-4"><strong>Message</strong></label></h5>
       <textarea className="form-control" 
       id="exampleTextarea" 
       rows="3"
@@ -37,7 +37,7 @@ const Formulaire = (props) => {
       props.touched.message && props.errors.message && <h5 className='alert alert-warning'>{props.errors.message}</h5>
     }
     </div>
-  <button  className="btn btn-primary" onClick={props.handleSubmit}
+  <button  className="btn btn-info" onClick={props.handleSubmit}
   >Envoyer</button>
 </form>
             </>
@@ -45,10 +45,13 @@ const Formulaire = (props) => {
     }
 
 export default withFormik({
+  // UTILISATION DE FORMIK
   mapPropsToValues: () => ({
     mail : '',
     message : ''
   }),
+  // VERIFICATION DES CHAMPS AVEC Yup
+
   validationSchema : Yup.object().shape({
     nom: Yup.string()
     .min(5,"Le nom doit contenir 5 caractères")
@@ -62,6 +65,7 @@ export default withFormik({
 
     .required('ce champ est obligatoire'),
   }),
+  // validation au clic
   handleSubmit: (values,{props}) =>{
     alert("messag envoyé")
   }
